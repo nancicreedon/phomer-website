@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="144" viewBox="0 0 160 144" role="img" aria-label="Phomer trolley and location logo concept">
+  <title>Phomer — Help is on the way</title>
+  <g fill="#E1B29A">
+   <path d="M5 59 L53 45 L47 54 Z"/><path d="M3 75 L50 61 L44 70 Z"/><path d="M14 91 L46 80 L42 89 Z"/>
+   <path d="M20 121 Q60 103 97 110 Q56 106 20 121 Z"/>
+  </g>
+  <g stroke="#000080" stroke-width="6.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M65 24 Q68 15 78 15 H98 Q107 15 103 26 L82 88 H54 L74 27"/>
+   <path d="M57 90 H98"/>
+   <circle cx="63" cy="96" r="10" fill="white"/>
+   <circle cx="93" cy="96" r="10" fill="white"/>
+  </g>
+  <path d="M128 52 C117 52 109 60 109 71 C109 83 128 103 128 103 C128 103 147 83 147 71 C147 60 139 52 128 52 Z" fill="#34C759"/>
+  <circle cx="128" cy="70" r="7.1" fill="white"/>
+  <circle cx="128" cy="117" r="3.7" fill="#34C759"/>
+  </svg>
