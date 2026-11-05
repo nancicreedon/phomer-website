@@ -21,8 +21,11 @@
     .research-top p{max-width:650px;margin:0 auto 1.3rem;line-height:1.55;color:#e7f1f7;font-size:clamp(.98rem,1.4vw,1.12rem)}
     .research-eyebrow{font-size:.75rem;letter-spacing:.14em;font-weight:800;color:#b9ebdf;text-transform:uppercase}
     .survey-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;max-width:850px;margin:1.6rem auto .75rem}
-    .survey-choice{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:white;color:#112d34;border-radius:16px;padding:1.15rem 1.25rem;text-align:left;text-decoration:none;box-shadow:0 10px 22px #0002;min-height:100px;transition:transform .15s,box-shadow .15s}
-    .survey-choice:hover,.survey-choice:focus-visible{transform:translateY(-3px);box-shadow:0 16px 32px #0004}
+    .survey-choice{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#baf5dc;color:#082d29;border:3px solid #ffffff;border-radius:16px;padding:1.15rem 1.25rem;text-align:left;text-decoration:none;box-shadow:0 9px 0 rgba(0,0,0,.25),0 15px 25px #0003;min-height:108px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+    .survey-choice:nth-child(2){background:#ffe39b}
+    .survey-choice .click-action{display:block;margin-top:.65rem;font-weight:900;font-size:.94rem;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px}
+    .survey-choice .arrow-disc{background:#092f3b;color:#fff;border-radius:50%;width:44px;height:44px;flex-shrink:0;display:grid;place-items:center;font-size:1.5rem}
+    .survey-choice:hover,.survey-choice:focus-visible{transform:translateY(-3px);box-shadow:0 12px 0 rgba(0,0,0,.2),0 18px 32px #0004}
     .survey-choice strong{font-size:clamp(1.05rem,1.6vw,1.35rem);display:block;line-height:1.25}
     .survey-choice small{font-size:.86rem;display:block;margin-top:.4rem;color:#53645f}
     .survey-choice b{font-size:1.5rem}
@@ -65,10 +68,10 @@
       <p>We're building something new, and your opinion matters. Are you someone who needs local services, or someone who provides them?</p>
       <div class="survey-choices" aria-label="Choose your Phomer research survey">
         <a class="survey-choice" href="#customers">
-          <span><strong>I'm a potential Phomer user</strong><small>Help shape how we find local services · survey opening soon</small></span><b aria-hidden="true">↗</b>
+          <span><strong>I’m a potential Phomer user</strong><small>Customer survey · Opening soon</small><span class="click-action">CLICK HERE to see survey details →</span></span><span class="arrow-disc" aria-hidden="true">→</span>
         </a>
         <a class="survey-choice" href="#providers">
-          <span><strong>I'm a potential Phomer provider</strong><small>Help shape how we find local jobs · survey opening soon</small></span><b aria-hidden="true">↗</b>
+          <span><strong>I’m a potential Phomer provider</strong><small>Provider survey · Opening soon</small><span class="click-action">CLICK HERE to see survey details →</span></span><span class="arrow-disc" aria-hidden="true">→</span>
         </a>
       </div>
       <p class="research-caveat">The surveys are being checked before they open. These buttons take you to the survey details for now.</p>
