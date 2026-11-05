@@ -14,21 +14,17 @@
       menuButton.setAttribute('aria-label', 'Open navigation');
     }));
   }
-  // Show the survey invitation immediately on each fresh homepage load.
+  // The overlay is visible in the HTML from first paint; JS only manages dismissal.
   const researchPopup = document.getElementById('phomer-research-popup');
   if (researchPopup) {
-    const closePopup = () => {
-      if (researchPopup.open) researchPopup.close();
-    };
+    const closePopup = () => { researchPopup.hidden = true; document.body.classList.remove('research-popup-open'); };
+    document.body.classList.add('research-popup-open');
     researchPopup.querySelectorAll('[data-close-research]').forEach(button => button.addEventListener('click', closePopup));
     researchPopup.querySelectorAll('.popup-choice').forEach(link => link.addEventListener('click', closePopup));
-    researchPopup.addEventListener('cancel', event => { event.preventDefault(); closePopup(); });
     researchPopup.addEventListener('click', event => { if (event.target === researchPopup) closePopup(); });
-    if (typeof researchPopup.showModal === 'function') {
-      researchPopup.showModal();
-    } else {
-      researchPopup.setAttribute('open', '');
-    }
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !researchPopup.hidden) closePopup(); });
+    const firstButton = researchPopup.querySelector('[data-close-research]');
+    if (firstButton) firstButton.focus({ preventScroll: true });
   }
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
