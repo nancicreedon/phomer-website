@@ -14,19 +14,21 @@
       menuButton.setAttribute('aria-label', 'Open navigation');
     }));
   }
+  // Show the survey invitation immediately on each fresh homepage load.
   const researchPopup = document.getElementById('phomer-research-popup');
-  if (researchPopup && typeof researchPopup.showModal === 'function') {
+  if (researchPopup) {
     const closePopup = () => {
-      researchPopup.close();
-      try { sessionStorage.setItem('phomer-research-popup-dismissed', '1'); } catch (_) {}
+      if (researchPopup.open) researchPopup.close();
     };
-    researchPopup.querySelectorAll('[data-close-research]').forEach(btn => btn.addEventListener('click', closePopup));
+    researchPopup.querySelectorAll('[data-close-research]').forEach(button => button.addEventListener('click', closePopup));
     researchPopup.querySelectorAll('.popup-choice').forEach(link => link.addEventListener('click', closePopup));
     researchPopup.addEventListener('cancel', event => { event.preventDefault(); closePopup(); });
     researchPopup.addEventListener('click', event => { if (event.target === researchPopup) closePopup(); });
-    let alreadyDismissed = false;
-    try { alreadyDismissed = sessionStorage.getItem('phomer-research-popup-dismissed') === '1'; } catch (_) {}
-    if (!alreadyDismissed) researchPopup.showModal();
+    if (typeof researchPopup.showModal === 'function') {
+      researchPopup.showModal();
+    } else {
+      researchPopup.setAttribute('open', '');
+    }
   }
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
